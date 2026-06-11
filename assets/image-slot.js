@@ -225,7 +225,7 @@
 
   class ImageSlot extends HTMLElement {
     static get observedAttributes() {
-      return ['shape', 'radius', 'mask', 'fit', 'position', 'placeholder', 'src', 'id'];
+      return ['shape', 'radius', 'mask', 'fit', 'position', 'placeholder', 'src', 'id', 'pan-x', 'pan-y'];
     }
 
     constructor() {
@@ -607,10 +607,12 @@
       const url = this._userUrl || srcAttr;
       // Don't clobber an in-flight reframe with a store-triggered re-render.
       if (!this.hasAttribute('data-reframe')) {
+        const panX = parseFloat(this.getAttribute('pan-x'));
+        const panY = parseFloat(this.getAttribute('pan-y'));
         this._view = {
           s: stored && Number.isFinite(stored.s) ? clampS(stored.s) : 1,
-          x: stored && Number.isFinite(stored.x) ? stored.x : 0,
-          y: stored && Number.isFinite(stored.y) ? stored.y : 0,
+          x: stored && Number.isFinite(stored.x) ? stored.x : (Number.isFinite(panX) ? panX : 0),
+          y: stored && Number.isFinite(stored.y) ? stored.y : (Number.isFinite(panY) ? panY : 0),
         };
       }
       this._cap.textContent = this.getAttribute('placeholder') || 'Drop an image';

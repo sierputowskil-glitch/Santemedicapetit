@@ -4,12 +4,14 @@
    Sits behind the "Zarezerwuj swój moment spokoju" booking section.
    ============================================================ */
 
-.book .confetti{
+.book .confetti,
+.exp .confetti{
   position:absolute;inset:0;z-index:1;
   overflow:hidden;pointer-events:none;
 }
 
-.book .confetti i{
+.book .confetti i,
+.exp .confetti i{
   position:absolute;
   top:var(--y);left:var(--x);
   width:var(--s);height:var(--s);
@@ -23,13 +25,20 @@
 }
 
 /* terrazzo shape vocabulary */
-.book .confetti i.tri    {clip-path:polygon(50% 0, 100% 100%, 0 100%);}
-.book .confetti i.semi   {border-radius:100px 100px 0 0;}
-.book .confetti i.dot    {border-radius:50%;}
-.book .confetti i.quad   {clip-path:polygon(14% 0, 100% 22%, 84% 100%, 0 74%);}
-.book .confetti i.shard  {clip-path:polygon(0 18%, 78% 0, 100% 86%, 26% 100%);}
-.book .confetti i.sliver {height:calc(var(--s) * .3);border-radius:3px;}
-.book .confetti i.rect   {border-radius:1.5px;}
+.book .confetti i.tri,
+.exp .confetti i.tri    {clip-path:polygon(50% 0, 100% 100%, 0 100%);}
+.book .confetti i.semi,
+.exp .confetti i.semi   {border-radius:100px 100px 0 0;}
+.book .confetti i.dot,
+.exp .confetti i.dot    {border-radius:50%;}
+.book .confetti i.quad,
+.exp .confetti i.quad   {clip-path:polygon(14% 0, 100% 22%, 84% 100%, 0 74%);}
+.book .confetti i.shard,
+.exp .confetti i.shard  {clip-path:polygon(0 18%, 78% 0, 100% 86%, 26% 100%);}
+.book .confetti i.sliver,
+.exp .confetti i.sliver {height:calc(var(--s) * .3);border-radius:3px;}
+.book .confetti i.rect,
+.exp .confetti i.rect   {border-radius:1.5px;}
 
 @keyframes confIn{
   from{opacity:0;}
@@ -43,7 +52,8 @@
 
 /* respect reduced motion — show the settled pattern, no drift */
 @media (prefers-reduced-motion:reduce){
-  .book .confetti i{
+  .book .confetti i,
+  .exp .confetti i{
     animation:confIn .6s ease forwards var(--ds);
     transform:rotate(var(--r));
   }

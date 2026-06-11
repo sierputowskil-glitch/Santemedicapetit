@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sierputowskil-glitch.github.io/Santemedicapetit/sitemap.xml

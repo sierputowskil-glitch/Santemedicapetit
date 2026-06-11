@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pielęgnacja skóry w ciąży — Blog Santé Medica Petit</title>
-<meta name="description" content="Co naprawdę jest bezpieczne dla skóry w ciąży? Dermatolog tłumaczy, z czego zrezygnować, co zostawić i jak spokojnie zadbać o skórę w tym wyjątkowym czasie.">
+<title>Mezoterapia mikroigłowa — Blog Santé Medica Petit</title>
+<meta name="description" content="Mezoterapia mikroigłowa, czyli mikronakłuwanie Dermapen 4: wskazania, przebieg zabiegu, gojenie i najważniejsze zalecenia po zabiegu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -16,17 +16,45 @@
 <!-- ================= NAV ================= -->
 <header class="nav" id="nav">
   <a class="nav__logo" href="index.html#top" aria-label="Santé Medica Petit">
-    <img class="logo-white" src="assets/logos/logo-white.svg?v=2" alt="Santé Medica" style="width: 365px; height: 85px; object-fit: fill">
-    <img class="logo-black" src="assets/logos/logo-black.svg?v=2" alt="Santé Medica">
+    <img class="logo-white" src="assets/logos/logo-white-large.svg?v=2" alt="Santé Medica" style="width: 365px; height: 85px; object-fit: fill">
+    <img class="logo-black" src="assets/logos/logo-black-large.svg?v=2" alt="Santé Medica">
   </a>
   <nav class="nav__links">
-    <a href="index.html#about">O klinice</a>
-    <a href="index.html#spec">Specjalizacje</a>
-    <a href="index.html#team">Zespół</a>
-    <a href="index.html#cennik">Cennik</a>
+    <div class="nav__item nav__item--dropdown">
+      <a href="index.html#about" class="nav__drop-trigger">O klinice</a>
+      <div class="nav__dropdown nav__dropdown--about">
+        <a href="index.html#about">O klinice</a>
+        <a href="index.html#team">Zespół</a>
+        <a href="index.html#cennik">Cennik</a>
+        <a href="index.html#exp">Przestrzeń</a>
+      </div>
+    </div>
+    <div class="nav__item nav__item--dropdown">
+      <a href="index.html#spec" class="nav__drop-trigger">Specjalizacje</a>
+      <div class="nav__dropdown">
+        <a href="dermatologia.html">Dermatologia</a>
+        <a href="ginekologia.html">Ginekologia</a>
+        <a href="ginekologia-plastyczna-regeneracyjna.html">Ginekologia plastyczna</a>
+        <a href="medycyna-estetyczna.html">Medycyna estetyczna</a>
+        <a href="perinatologia.html">Perinatologia</a>
+        <a href="laseroterapia-co2.html">Laseroterapia CO2</a>
+        <a href="usg-3d-4d.html">USG 3D/4D</a>
+      </div>
+    </div>
     <a href="badania-kliniczne.html">Badania</a>
-    <a href="blog.html" aria-current="page">Blog</a>
+    <div class="nav__item nav__item--dropdown">
+      <a href="blog.html" class="nav__drop-trigger" aria-current="page">Blog</a>
+      <div class="nav__dropdown nav__dropdown--blog">
+        <a href="blog.html">Wszystkie wpisy</a>
+        <a href="blog-dermatologia.html">Dermatologia</a>
+        <a href="blog-ginekologia.html">Ginekologia</a>
+        <a href="blog-medycyna-estetyczna.html">Medycyna estetyczna</a>
+        <a href="blog-ciaza-usg.html">Ciąża i USG</a>
+        <a href="blog-pielegnacja.html">Pielęgnacja</a>
+      </div>
+    </div>
     <a href="index.html#contact">Kontakt</a>
+    <a href="international-patients.html" class="nav__lang">EN</a>
     <a href="index.html#book" class="btn btn-nav">Umów wizytę</a>
   </nav>
   <button class="nav__burger" aria-label="Menu">
@@ -36,11 +64,31 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html#about">O klinice</a>
+  <div class="mobile-subnav">
+    <a href="index.html#team">Zespół</a>
+    <a href="index.html#cennik">Cennik</a>
+    <a href="index.html#exp">Przestrzeń</a>
+  </div>
   <a href="index.html#spec">Specjalizacje</a>
-  <a href="index.html#team">Zespół</a>
-  <a href="index.html#cennik">Cennik</a>
+  <div class="mobile-subnav">
+    <a href="dermatologia.html">Dermatologia</a>
+    <a href="ginekologia.html">Ginekologia</a>
+    <a href="ginekologia-plastyczna-regeneracyjna.html">Ginekologia plastyczna</a>
+    <a href="medycyna-estetyczna.html">Medycyna estetyczna</a>
+    <a href="perinatologia.html">Perinatologia</a>
+    <a href="laseroterapia-co2.html">Laseroterapia CO2</a>
+    <a href="usg-3d-4d.html">USG 3D/4D</a>
+  </div>
   <a href="badania-kliniczne.html">Badania kliniczne</a>
   <a href="blog.html">Blog</a>
+  <div class="mobile-subnav">
+    <a href="blog-dermatologia.html">Dermatologia</a>
+    <a href="blog-ginekologia.html">Ginekologia</a>
+    <a href="blog-medycyna-estetyczna.html">Medycyna estetyczna</a>
+    <a href="blog-ciaza-usg.html">Ciąża i USG</a>
+    <a href="blog-pielegnacja.html">Pielęgnacja</a>
+  </div>
+  <a href="international-patients.html">For international patients</a>
   <a href="index.html#book">Umów wizytę</a>
   <a href="index.html#contact">Kontakt</a>
   <div class="mm-foot">ul. Grudziądzka 4B / 104 &nbsp;·&nbsp; 80-414 Gdańsk &nbsp;·&nbsp; +48 880 800 100</div>
@@ -54,80 +102,112 @@
       <p class="art-crumb">
         <a href="blog.html">Blog</a>
         <span class="sep">/</span>
-        <span>Ciąża &amp; USG</span>
+        <a href="blog.html?cat=estetyka">Medycyna estetyczna</a>
+        <span class="sep">/</span>
+        <a href="blog.html?cat=pielegnacja">Pielęgnacja</a>
       </p>
-      <h1>Pielęgnacja skóry w ciąży: co naprawdę jest bezpieczne</h1>
-      <p class="art-dek">Retinol, kwasy, filtry, zabiegi — w ciąży wiele rytuałów wymaga rewizji. Spokojnie tłumaczymy, z czego zrezygnować, co bez obaw zostawić i jak zadbać o skórę w tym wyjątkowym czasie.</p>
+      <h1>Mezoterapia mikroigłowa: kiedy warto wybrać mikronakłuwanie?</h1>
+      <p class="art-dek">Mikronakłuwanie, znane także jako Dermapen, stymuluje naturalną przebudowę skóry. Wyjaśniamy, przy jakich wskazaniach sprawdza się najlepiej, jak wygląda zabieg i czego spodziewać się podczas gojenia.</p>
       <div class="post-author">
-        <image-slot id="art-author" src="assets/photos/team/antoszewska.jpg" placeholder="dr Magdalena Antoszewska"></image-slot>
+        <image-slot id="art-author" src="assets/photos/team/skorka.jpg" placeholder="lek. Izabela Skórka"></image-slot>
         <div>
-          <div class="pa-name">dr n. med. Magdalena Antoszewska</div>
-          <div class="pa-role">Dermatolog</div>
+          <div class="pa-name">lek. Izabela Skórka</div>
+          <div class="pa-role">Medycyna estetyczna</div>
         </div>
+      </div>
+      <div class="art-cats">
+        <a href="blog.html?cat=estetyka">Medycyna estetyczna</a>
+        <a href="blog.html?cat=pielegnacja">Pielęgnacja</a>
       </div>
     </header>
   </div>
 
   <div class="art-cover reveal" data-d="1">
-    <image-slot id="art-cover" src="assets/photos/room-aesthetic.jpg" placeholder="Zdjęcie główne artykułu — kobieta w ciąży / pielęgnacja, naturalne światło"></image-slot>
+    <image-slot id="art-cover" src="assets/photos/equip-neauvia.jpg" placeholder="Zdjęcie główne artykułu — mezoterapia mikroigłowa / medycyna estetyczna"></image-slot>
   </div>
 
   <div class="wrap">
     <div class="art-body">
-      <p class="art-stand-first">Ciąża zmienia skórę szybciej, niż się tego spodziewamy. Wahania hormonów potrafią rozjaśnić cerę i dodać jej blasku, ale równie często pojawiają się przebarwienia, większa wrażliwość czy nawroty trądziku. To naturalny moment, by przyjrzeć się swojej pielęgnacji — nie po to, by ją komplikować, lecz by uczynić ją bezpieczniejszą i prostszą.</p>
+      <div class="art-category-nav">
+        <span>Kategorie artykułu</span>
+        <a href="blog.html?cat=estetyka">Medycyna estetyczna</a>
+        <a href="blog.html?cat=pielegnacja">Pielęgnacja</a>
+      </div>
+      <p class="art-stand-first">Mezoterapia mikroigłowa, znana także jako mikronakłuwanie lub Dermapen, jest jednym z najpopularniejszych, a jednocześnie bardzo efektywnych zabiegów wykorzystywanych do stymulacji i przebudowy skóry. To procedura, która pobudza naturalne procesy regeneracyjne, poprawiając napięcie, strukturę i ogólną jakość skóry.</p>
 
-      <p>Najważniejsza zasada brzmi: <strong>w razie wątpliwości — pytaj.</strong> Wiele składników jest doskonale przebadanych i bezpiecznych, część budzi uzasadnione obawy, a o niektórych po prostu wiemy zbyt mało, by ryzykować. Poniżej porządkujemy to, co w gabinecie słyszymy najczęściej.</p>
+      <p>Mikronakłuwanie ma wiele badań potwierdzających skuteczność w konkretnych wskazaniach. W praktyce wykorzystujemy je wtedy, gdy skóra potrzebuje przebudowy, wyrównania tekstury lub silniejszej stymulacji niż ta, którą daje sama pielęgnacja domowa.</p>
 
-      <h2>Czego lepiej unikać</h2>
-      <p>Kilka grup składników warto odstawić na czas ciąży i karmienia — nie dlatego, że na pewno szkodzą, lecz dlatego, że ostrożność jest tu rozsądniejsza niż eksperyment.</p>
+      <h2>Kiedy warto rozważyć zabieg?</h2>
+      <p>Mezoterapia mikroigłowa może być dobrym wyborem przy takich problemach jak:</p>
       <ul>
-        <li><strong>Retinoidy</strong> (retinol, retinal, tretynoina) — zarówno w formie kosmetyków, jak i leków. To najczęściej powtarzane zalecenie i warto je potraktować poważnie.</li>
-        <li><strong>Doustna izotretynoina</strong> oraz silne terapie przeciwtrądzikowe — wyłącznie pod ścisłą kontrolą i nigdy w ciąży.</li>
-        <li><strong>Mocne kwasy złuszczające</strong> w wysokich stężeniach — łagodne kwasy w kosmetykach są zwykle akceptowalne, ale zabiegi warto przełożyć.</li>
+        <li>utrwalone zmarszczki, na przykład na czole lub wokół oczu,</li>
+        <li>wiotkość skóry i utrata jędrności,</li>
+        <li>przebarwienia potrądzikowe, posłoneczne oraz melasma,</li>
+        <li>blizny pooperacyjne i potrądzikowe,</li>
+        <li>rozstępy,</li>
+        <li>rozszerzone pory.</li>
       </ul>
 
-      <h2>Co możesz spokojnie zostawić</h2>
-      <p>Dobra wiadomość jest taka, że trzon skutecznej pielęgnacji pozostaje bez zmian. Nawilżanie, ochrona i delikatne oczyszczanie to fundament, który w ciąży działa równie dobrze — a często jest potrzebny bardziej niż zwykle.</p>
-      <ul>
-        <li><strong>Filtr przeciwsłoneczny SPF 50</strong> — najważniejszy krok w profilaktyce przebarwień ciążowych. Stosuj codziennie, także w pochmurne dni.</li>
-        <li><strong>Kwas hialuronowy i ceramidy</strong> — nawilżają i wzmacniają barierę skóry bez ryzyka.</li>
-        <li><strong>Niacynamid oraz witamina C</strong> — łagodzą, rozjaśniają i wspierają skórę reaktywną.</li>
-      </ul>
+      <h2>Na czym polega mikronakłuwanie?</h2>
+      <p>Zabieg polega na wykonywaniu setek tysięcy nakłuć w skórze, na głębokości precyzyjnie dobranej do problemu i potrzeb skóry. W trakcie procedury wykorzystuje się odpowiednio dobraną ampułkę, która wzmacnia procesy przebudowy.</p>
+
+      <p>Choć podczas zabiegu powstają mikrouszkodzenia, jest to proces w pełni kontrolowany, poprzedzony dezynfekcją i odpowiednim przygotowaniem skóry. Takie działanie uruchamia naturalne mechanizmy regeneracyjne, między innymi za sprawą czynników wzrostu obecnych w kropelkach krwi pojawiających się podczas nakłuwania.</p>
+
+      <p>W Santé Medica Petit stosujemy urządzenie <strong>Dermapen 4</strong>, które wykonuje aż 1920 nakłuć na sekundę.</p>
 
       <div class="art-pull">
-        <p>W ciąży skóra nie potrzebuje <span class="script">więcej</span> — potrzebuje mądrzej dobranego minimum.</p>
+        <p>Mikronakłuwanie nie maskuje problemu. Pobudza skórę do <span class="script">przebudowy</span>.</p>
       </div>
 
-      <h2>A zabiegi w gabinecie?</h2>
-      <p>Większość zabiegów medycyny estetycznej i część dermatologicznych odkładamy do czasu po porodzie i zakończeniu karmienia. Dotyczy to m.in. laseroterapii, mezoterapii, toksyny botulinowej czy wypełniaczy. Nie oznacza to jednak, że zostajesz bez opieki — wręcz przeciwnie.</p>
-      <p>W tym czasie skupiamy się na <a href="index.html#spec" class="inline">bezpiecznej diagnostyce dermatologicznej</a>, kontroli znamion oraz spokojnym dobraniu domowej pielęgnacji. Jeśli coś niepokoi Cię na skórze — świąd, nasilone przebarwienia, nowe zmiany — to dobry moment na konsultację, a nie na samodzielne leczenie.</p>
+      <h2>Jakich efektów można się spodziewać?</h2>
+      <p>Mikrouszkodzenia powstałe podczas zabiegu rozpoczynają procesy gojenia. W ich trakcie zwiększa się produkcja kolagenu, który odpowiada za jędrność i elastyczność skóry.</p>
+
+      <p>Efektem może być odczuwalnie lepsze napięcie skóry, redukcja zmarszczek, poprawa struktury skóry, jej nawilżenia i kolorytu. Plan terapii zawsze dobieramy indywidualnie, bo innego działania potrzebują blizny potrądzikowe, a innego wiotkość czy przebarwienia.</p>
+
+      <h2>Jak przebiega gojenie?</h2>
+      <p>Gojenie po zabiegu zwykle przebiega bezproblemowo. Tuż po mikronakłuwaniu skóra może być dość mocno zaczerwieniona — to zupełnie normalna reakcja. W kolejnych dniach zaczerwienienie stopniowo ustępuje, podobnie jak nieco większa wrażliwość skóry na kosmetyki.</p>
+
+      <p>Przez 3-4 dni po zabiegu zalecamy nie stosować silnie drażniących produktów, na przykład kosmetyków z kwasami, aby nie zaburzać procesu gojenia.</p>
+
+      <h2>Zalecenia po zabiegu</h2>
+      <p>Po mikronakłuwaniu nie ma bardzo wielu ograniczeń, ale warto zadbać o kilka prostych rzeczy:</p>
+      <ul>
+        <li>zmienić poszewkę poduszki,</li>
+        <li>stosować rano krem z filtrem, aby zapobiegać powstawaniu przebarwień,</li>
+        <li>pamiętać o odpowiednim nawodnieniu, około 2 litrów wody dziennie,</li>
+        <li>przez 3-4 dni ograniczać kontakt twarzy z brudnymi powierzchniami i zwierzętami,</li>
+        <li>odpuścić trening, basen i saunę na kilka dni po zabiegu.</li>
+      </ul>
 
       <div class="art-callout">
-        <p class="eyebrow olive">Dobra praktyka</p>
-        <h4>Trzy kroki, które wystarczą</h4>
-        <p>Delikatne oczyszczanie rano i wieczorem, nawilżenie dopasowane do potrzeb skóry oraz filtr SPF na dzień. Wszystko inne dokładamy świadomie, najlepiej po konsultacji — nie „na zapas".</p>
+        <p class="eyebrow olive">Warto wiedzieć</p>
+        <h4>Z czym można połączyć mikronakłuwanie?</h4>
+        <p>Mikronakłuwanie można połączyć z peelingami medycznymi lub osoczem bogatopłytkowym, jeśli zależy nam na mocniejszym działaniu przebudowującym skórę. Takie połączenia dobieramy jednak po ocenie skóry i wskazań.</p>
       </div>
 
-      <p>Pamiętaj, że ten tekst ma charakter informacyjny i nie zastępuje konsultacji. Każda skóra — i każda ciąża — jest inna, dlatego najbezpieczniejszy plan to ten ustalony indywidualnie, z lekarzem, który zna Twoją historię.</p>
+      <h2>Przeciwwskazania</h2>
+      <p>Przeciwwskazaniami do zabiegu są między innymi aktywne infekcje skórne, choroby nowotworowe, ciąża oraz skłonność do powstawania blizn przerostowych.</p>
+
+      <p>Jeśli jesteś ciekawa lub ciekawy, czy to zabieg dla Ciebie, umów się na konsultację. Razem dopasujemy odpowiedni plan zabiegowy dla Twojej skóry, a także pielęgnację, która będzie go dobrze dopełniać.</p>
     </div>
   </div>
 
   <!-- in-article CTA -->
   <div class="art-cta reveal">
-    <p class="eyebrow olive">Konsultacja dermatologiczna</p>
-    <h3>Masz pytania o pielęgnację w ciąży?</h3>
-    <p>Umów spokojną konsultację — wspólnie dobierzemy bezpieczny rytuał dopasowany do Twojej skóry i etapu ciąży.</p>
+    <p class="eyebrow olive">Konsultacja medycyny estetycznej</p>
+    <h3>Chcesz sprawdzić, czy Dermapen 4 jest dla Ciebie?</h3>
+    <p>Umów konsultację — ocenimy potrzeby skóry, dobierzemy plan zabiegowy i pielęgnację, która najlepiej uzupełni terapię.</p>
     <a href="index.html#book" class="btn btn-solid">Umów wizytę <span class="arrow">→</span></a>
   </div>
 
   <!-- author bio -->
   <div class="wrap">
     <div class="art-bio reveal">
-      <image-slot id="bio-photo" src="assets/photos/team/antoszewska.jpg" placeholder="dr Magdalena Antoszewska"></image-slot>
+      <image-slot id="bio-photo" src="assets/photos/team/skorka.jpg" placeholder="lek. Izabela Skórka"></image-slot>
       <div>
         <p class="ab-role">O autorce</p>
-        <h4>dr n. med. Magdalena Antoszewska</h4>
-        <p>Dermatolog w Santé Medica Petit. Zajmuje się diagnostyką i leczeniem chorób skóry oraz pielęgnacją cery wrażliwej. Ceniona przez pacjentki za konkretne, indywidualne podejście do każdej skóry.</p>
+        <h4>lek. Izabela Skórka</h4>
+        <p>Specjalistka medycyny estetycznej w Santé Medica Petit. Tworzy indywidualne plany zabiegowe i pielęgnacyjne, stawiając na naturalny efekt oraz świadome prowadzenie skóry krok po kroku.</p>
       </div>
     </div>
     <div class="art-share reveal" data-d="1">
@@ -197,7 +277,7 @@
   <div class="wrap">
     <div class="footer__top">
       <div class="footer__brand">
-        <div class="footer__logo"><img src="assets/logos/logo-white.svg?v=2" alt="Santé Medica Petit"></div>
+        <div class="footer__logo"><img src="assets/logos/logo-white-large.svg?v=2" alt="Santé Medica Petit"></div>
         <p>Butikowa klinika kobieca w Gdańsku — dermatologia, ginekologia i medycyna estetyczna w atmosferze spokoju, dyskrecji i troski.</p>
         <span class="script">Petit</span>
       </div>

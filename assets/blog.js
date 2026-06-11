@@ -39,23 +39,40 @@
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
   /* ---- Category filter ---- */
-  var pills = [].slice.call(document.querySelectorAll('.mag-pill'));
+  var pills = [].slice.call(document.querySelectorAll('.mag-pill[data-filter]'));
   var cards = [].slice.call(document.querySelectorAll('.post-card[data-cat]'));
   var feature = document.querySelector('.mag-feature-wrap');
   if (pills.length) {
+    function applyCategory(cat, updateUrl) {
+      var active = pills.find(function (p) { return p.getAttribute('data-filter') === cat; }) || pills[0];
+      cat = active.getAttribute('data-filter');
+      pills.forEach(function (p) { p.classList.toggle('on', p === active); });
+      // featured shown only in "all" view
+      if (feature) feature.classList.toggle('is-hidden', cat !== 'all');
+      cards.forEach(function (card) {
+        var match = cat === 'all' || (card.getAttribute('data-cat') || '').split(' ').indexOf(cat) > -1;
+        card.classList.toggle('is-hidden', !match);
+      });
+      if (updateUrl && window.history && window.URLSearchParams) {
+        var params = new URLSearchParams(window.location.search);
+        if (cat === 'all') params.delete('cat');
+        else params.set('cat', cat);
+        var query = params.toString();
+        history.replaceState(null, '', window.location.pathname + (query ? '?' + query : '') + window.location.hash);
+      }
+    }
+
     pills.forEach(function (pill) {
       pill.addEventListener('click', function () {
-        pills.forEach(function (p) { p.classList.remove('on'); });
-        pill.classList.add('on');
-        var cat = pill.getAttribute('data-filter');
-        // featured shown only in "all" view
-        if (feature) feature.classList.toggle('is-hidden', cat !== 'all');
-        cards.forEach(function (card) {
-          var match = cat === 'all' || (card.getAttribute('data-cat') || '').split(' ').indexOf(cat) > -1;
-          card.classList.toggle('is-hidden', !match);
-        });
+        applyCategory(pill.getAttribute('data-filter'), true);
       });
     });
+
+    var initialCat = 'all';
+    if (window.URLSearchParams) {
+      initialCat = new URLSearchParams(window.location.search).get('cat') || 'all';
+    }
+    applyCategory(initialCat, false);
   }
 
   /* ---- FAQ accordion ---- */

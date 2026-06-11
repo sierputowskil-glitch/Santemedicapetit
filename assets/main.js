@@ -110,35 +110,51 @@
     });
   });
 
-  /* ---- Confetti / terrazzo motif (booking section) ---- */
+  /* ---- Confetti / terrazzo motif ---- */
   (function () {
-    var layer = document.querySelector('.book .confetti');
-    if (!layer) return;
-    // weighted shape mix + brand-matched voucher palette
+    var configs = [
+      {
+        layer: document.querySelector('.book .confetti'),
+        colors: ['#3C2926', '#3C2926', '#A8645F', '#C18B86', '#7E3437', '#CB7E5E', '#C99A95', '#A8645F'],
+        count: 58,
+        size: [6, 26],
+        opacity: [0.55, 0.95],
+        float: [7, 16]
+      },
+      {
+        layer: document.querySelector('.exp .confetti'),
+        colors: ['#f3ece0b0', '#f3ece088', '#fbf4f299', '#ecd3cf88', '#c99a9566'],
+        count: 46,
+        size: [5, 22],
+        opacity: [0.32, 0.72],
+        float: [5, 12]
+      }
+    ];
     var shapes = ['tri', 'tri', 'dot', 'dot', 'quad', 'shard', 'semi', 'sliver', 'rect'];
-    var colors = ['#3C2926', '#3C2926', '#A8645F', '#C18B86', '#7E3437', '#CB7E5E', '#C99A95', '#A8645F'];
-    var N = 58;
-    var frag = document.createDocumentFragment();
     function r(min, max) { return min + Math.random() * (max - min); }
-    for (var i = 0; i < N; i++) {
-      var el = document.createElement('i');
-      el.className = shapes[(Math.random() * shapes.length) | 0];
-      var size = r(6, 26);
-      var fy = r(7, 16) * (Math.random() < 0.5 ? -1 : 1);
-      el.style.cssText =
-        '--x:' + r(0, 100).toFixed(2) + '%;' +
-        '--y:' + r(0, 100).toFixed(2) + '%;' +
-        '--s:' + size.toFixed(1) + 'px;' +
-        '--r:' + ((Math.random() * 360) | 0) + 'deg;' +
-        '--rd:' + ((r(-9, 9)) | 0) + 'deg;' +
-        '--fy:' + fy.toFixed(1) + 'px;' +
-        '--d:' + r(7, 15).toFixed(1) + 's;' +
-        '--df:' + r(0, 6).toFixed(1) + 's;' +
-        '--ds:' + r(0, 0.9).toFixed(2) + 's;' +
-        '--o:' + r(0.55, 0.95).toFixed(2) + ';' +
-        '--c:' + colors[(Math.random() * colors.length) | 0] + ';';
-      frag.appendChild(el);
-    }
-    layer.appendChild(frag);
+    configs.forEach(function (config) {
+      if (!config.layer) return;
+      var frag = document.createDocumentFragment();
+      for (var i = 0; i < config.count; i++) {
+        var el = document.createElement('i');
+        el.className = shapes[(Math.random() * shapes.length) | 0];
+        var size = r(config.size[0], config.size[1]);
+        var fy = r(config.float[0], config.float[1]) * (Math.random() < 0.5 ? -1 : 1);
+        el.style.cssText =
+          '--x:' + r(0, 100).toFixed(2) + '%;' +
+          '--y:' + r(0, 100).toFixed(2) + '%;' +
+          '--s:' + size.toFixed(1) + 'px;' +
+          '--r:' + ((Math.random() * 360) | 0) + 'deg;' +
+          '--rd:' + ((r(-9, 9)) | 0) + 'deg;' +
+          '--fy:' + fy.toFixed(1) + 'px;' +
+          '--d:' + r(7, 15).toFixed(1) + 's;' +
+          '--df:' + r(0, 6).toFixed(1) + 's;' +
+          '--ds:' + r(0, 0.9).toFixed(2) + 's;' +
+          '--o:' + r(config.opacity[0], config.opacity[1]).toFixed(2) + ';' +
+          '--c:' + config.colors[(Math.random() * config.colors.length) | 0] + ';';
+        frag.appendChild(el);
+      }
+      config.layer.appendChild(frag);
+    });
   })();
 })();

@@ -17,17 +17,45 @@
 <!-- ================= NAV ================= -->
 <header class="nav" id="nav">
   <a class="nav__logo" href="index.html#top" aria-label="Santé Medica Petit">
-    <img class="logo-white" src="assets/logos/logo-white.svg?v=2" alt="Santé Medica" style="width: 365px; height: 85px; object-fit: fill">
-    <img class="logo-black" src="assets/logos/logo-black.svg?v=2" alt="Santé Medica">
+    <img class="logo-white" src="assets/logos/logo-white-large.svg?v=2" alt="Santé Medica" style="width: 365px; height: 85px; object-fit: fill">
+    <img class="logo-black" src="assets/logos/logo-black-large.svg?v=2" alt="Santé Medica">
   </a>
   <nav class="nav__links">
-    <a href="index.html#about">O klinice</a>
-    <a href="index.html#spec">Specjalizacje</a>
-    <a href="index.html#team">Zespół</a>
-    <a href="index.html#cennik">Cennik</a>
-    <a href="badania-kliniczne.html" aria-current="page">Badania</a>
-    <a href="blog.html">Blog</a>
+    <div class="nav__item nav__item--dropdown">
+      <a href="index.html#about" class="nav__drop-trigger">O klinice</a>
+      <div class="nav__dropdown nav__dropdown--about">
+        <a href="index.html#about">O klinice</a>
+        <a href="index.html#team">Zespół</a>
+        <a href="index.html#cennik">Cennik</a>
+        <a href="index.html#exp">Przestrzeń</a>
+      </div>
+    </div>
+    <div class="nav__item nav__item--dropdown">
+      <a href="index.html#spec" class="nav__drop-trigger">Specjalizacje</a>
+      <div class="nav__dropdown">
+        <a href="dermatologia.html">Dermatologia</a>
+        <a href="ginekologia.html">Ginekologia</a>
+        <a href="ginekologia-plastyczna-regeneracyjna.html">Ginekologia plastyczna</a>
+        <a href="medycyna-estetyczna.html">Medycyna estetyczna</a>
+        <a href="perinatologia.html">Perinatologia</a>
+        <a href="laseroterapia-co2.html">Laseroterapia CO2</a>
+        <a href="usg-3d-4d.html">USG 3D/4D</a>
+      </div>
+    </div>
+    <a href="badania-kliniczne.html">Badania</a>
+    <div class="nav__item nav__item--dropdown">
+      <a href="blog.html" class="nav__drop-trigger">Blog</a>
+      <div class="nav__dropdown nav__dropdown--blog">
+        <a href="blog.html">Wszystkie wpisy</a>
+        <a href="blog-dermatologia.html">Dermatologia</a>
+        <a href="blog-ginekologia.html">Ginekologia</a>
+        <a href="blog-medycyna-estetyczna.html">Medycyna estetyczna</a>
+        <a href="blog-ciaza-usg.html">Ciąża i USG</a>
+        <a href="blog-pielegnacja.html">Pielęgnacja</a>
+      </div>
+    </div>
     <a href="index.html#contact">Kontakt</a>
+    <a href="international-patients.html" class="nav__lang">EN</a>
     <a href="index.html#book" class="btn btn-nav">Umów wizytę</a>
   </nav>
   <button class="nav__burger" aria-label="Menu">
@@ -37,11 +65,32 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html#about">O klinice</a>
+  <div class="mobile-subnav">
+    <a href="index.html#team">Zespół</a>
+    <a href="index.html#cennik">Cennik</a>
+    <a href="index.html#exp">Przestrzeń</a>
+  </div>
   <a href="index.html#spec">Specjalizacje</a>
-  <a href="index.html#team">Zespół</a>
-  <a href="index.html#cennik">Cennik</a>
+  <div class="mobile-subnav">
+    <a href="dermatologia.html">Dermatologia</a>
+    <a href="ginekologia.html">Ginekologia</a>
+    <a href="ginekologia-plastyczna-regeneracyjna.html">Ginekologia plastyczna</a>
+    <a href="medycyna-estetyczna.html">Medycyna estetyczna</a>
+    <a href="perinatologia.html">Perinatologia</a>
+    <a href="laseroterapia-co2.html">Laseroterapia CO2</a>
+    <a href="usg-3d-4d.html">USG 3D/4D</a>
+  </div>
   <a href="badania-kliniczne.html">Badania kliniczne</a>
   <a href="blog.html">Blog</a>
+  <div class="mobile-subnav">
+    <a href="blog-dermatologia.html">Dermatologia</a>
+    <a href="blog-ginekologia.html">Ginekologia</a>
+    <a href="blog-medycyna-estetyczna.html">Medycyna estetyczna</a>
+    <a href="blog-ciaza-usg.html">Ciąża i USG</a>
+    <a href="blog-pielegnacja.html">Pielęgnacja</a>
+  </div>
+  <a href="international-patients.html">For international patients</a>
+  <a href="index.html#book">Umów wizytę</a>
   <a href="index.html#contact">Kontakt</a>
   <div class="mm-foot">ul. Grudziądzka 4B / 104 &nbsp;·&nbsp; 80-414 Gdańsk &nbsp;·&nbsp; +48 880 800 100</div>
 </div>
@@ -301,7 +350,7 @@
   <div class="wrap">
     <div class="footer__top">
       <div class="footer__brand">
-        <div class="footer__logo"><img src="assets/logos/logo-white.svg?v=2" alt="Santé Medica Petit"></div>
+        <div class="footer__logo"><img src="assets/logos/logo-white-large.svg?v=2" alt="Santé Medica Petit"></div>
         <p>Butikowa klinika kobieca w Gdańsku — dermatologia, ginekologia i medycyna estetyczna w atmosferze spokoju, dyskrecji i troski.</p>
         <span class="script">Petit</span>
       </div>

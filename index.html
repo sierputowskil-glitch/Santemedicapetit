@@ -17,18 +17,45 @@
 <!-- ================= NAV ================= -->
 <header class="nav" id="nav">
   <a class="nav__logo" href="#top" aria-label="Santé Medica Petit">
-    <img class="logo-white" src="assets/logos/logo-white.svg?v=2" alt="Santé Medica" style="width: 365px; height: 85px; object-fit: fill">
-    <img class="logo-black" src="assets/logos/logo-black.svg?v=2" alt="Santé Medica">
+    <img class="logo-white" src="assets/logos/logo-white-large.svg?v=2" alt="Santé Medica" style="width: 365px; height: 85px; object-fit: fill">
+    <img class="logo-black" src="assets/logos/logo-black-large.svg?v=2" alt="Santé Medica">
   </a>
   <nav class="nav__links">
-    <a href="#about">O klinice</a>
-    <a href="#spec">Specjalizacje</a>
-    <a href="#team">Zespół</a>
-    <a href="#cennik">Cennik</a>
+    <div class="nav__item nav__item--dropdown">
+      <a href="#about" class="nav__drop-trigger">O klinice</a>
+      <div class="nav__dropdown nav__dropdown--about">
+        <a href="#about">O klinice</a>
+        <a href="#team">Zespół</a>
+        <a href="#cennik">Cennik</a>
+        <a href="#exp">Przestrzeń</a>
+      </div>
+    </div>
+    <div class="nav__item nav__item--dropdown">
+      <a href="#spec" class="nav__drop-trigger">Specjalizacje</a>
+      <div class="nav__dropdown">
+        <a href="dermatologia.html">Dermatologia</a>
+        <a href="ginekologia.html">Ginekologia</a>
+        <a href="ginekologia-plastyczna-regeneracyjna.html">Ginekologia plastyczna</a>
+        <a href="medycyna-estetyczna.html">Medycyna estetyczna</a>
+        <a href="perinatologia.html">Perinatologia</a>
+        <a href="laseroterapia-co2.html">Laseroterapia CO2</a>
+        <a href="usg-3d-4d.html">USG 3D/4D</a>
+      </div>
+    </div>
     <a href="badania-kliniczne.html">Badania</a>
-    <a href="#exp">Przestrzeń</a>
-    <a href="blog.html">Blog</a>
+    <div class="nav__item nav__item--dropdown">
+      <a href="blog.html" class="nav__drop-trigger">Blog</a>
+      <div class="nav__dropdown nav__dropdown--blog">
+        <a href="blog.html">Wszystkie wpisy</a>
+        <a href="blog-dermatologia.html">Dermatologia</a>
+        <a href="blog-ginekologia.html">Ginekologia</a>
+        <a href="blog-medycyna-estetyczna.html">Medycyna estetyczna</a>
+        <a href="blog-ciaza-usg.html">Ciąża i USG</a>
+        <a href="blog-pielegnacja.html">Pielęgnacja</a>
+      </div>
+    </div>
     <a href="#contact">Kontakt</a>
+    <a href="international-patients.html" class="nav__lang">EN</a>
     <a href="#book" class="btn btn-nav">Umów wizytę</a>
   </nav>
   <button class="nav__burger" aria-label="Menu">
@@ -37,13 +64,32 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about">O klinice</a>
+  <a href="#about">O klinice</a>
+  <div class="mobile-subnav">
+    <a href="#team">Zespół</a>
+    <a href="#cennik">Cennik</a>
+    <a href="#exp">Przestrzeń</a>
+  </div>
   <a href="#spec">Specjalizacje</a>
-  <a href="#team">Zespół</a>
-  <a href="#cennik">Cennik</a>
+  <div class="mobile-subnav">
+    <a href="dermatologia.html">Dermatologia</a>
+    <a href="ginekologia.html">Ginekologia</a>
+    <a href="ginekologia-plastyczna-regeneracyjna.html">Ginekologia plastyczna</a>
+    <a href="medycyna-estetyczna.html">Medycyna estetyczna</a>
+    <a href="perinatologia.html">Perinatologia</a>
+    <a href="laseroterapia-co2.html">Laseroterapia CO2</a>
+    <a href="usg-3d-4d.html">USG 3D/4D</a>
+  </div>
   <a href="badania-kliniczne.html">Badania kliniczne</a>
-  <a href="#exp">Przestrzeń</a>
   <a href="blog.html">Blog</a>
+  <div class="mobile-subnav">
+    <a href="blog-dermatologia.html">Dermatologia</a>
+    <a href="blog-ginekologia.html">Ginekologia</a>
+    <a href="blog-medycyna-estetyczna.html">Medycyna estetyczna</a>
+    <a href="blog-ciaza-usg.html">Ciąża i USG</a>
+    <a href="blog-pielegnacja.html">Pielęgnacja</a>
+  </div>
+  <a href="international-patients.html">For international patients</a>
   <a href="#book">Umów wizytę</a>
   <a href="#contact">Kontakt</a>
   <div class="mm-foot">ul. Grudziądzka 4B / 104 &nbsp;·&nbsp; 80-414 Gdańsk &nbsp;·&nbsp; +48 880 800 100</div>
@@ -79,7 +125,7 @@ w jej najbardziej ludzkim wydaniu.</h1>
   <div class="wrap about__grid">
     <div class="about__media reveal">
       <div class="ring-accent about__ring"></div>
-      <image-slot id="about-portrait" mask="inset(0 round 48% 48% 12px 12px / 40% 40% 10px 10px)" src="assets/photos/team/karolina.jpg" placeholder="Portret — Karolina Domińska" data-parallax="26"></image-slot>
+      <image-slot id="about-portrait" mask="inset(0 round 48% 48% 12px 12px / 40% 40% 10px 10px)" src="assets/photos/team/karolina.jpg" placeholder="Portret — Karolina Domińska" data-parallax="26" pan-x="10"></image-slot>
       <div class="tag">
         <span class="script">Petit</span>
         <p>Mała klinika. Wielka uważność na każdą pacjentkę.</p>
@@ -121,37 +167,37 @@ w jednym, kameralnym miejscu i pod opieką doświadczonych specjalistek.</p>
         <span class="spec__num">01</span>
         <h3>Dermatologia</h3>
         <p>Diagnostyka i leczenie chorób skóry, dermatochirurgia oraz diagnostyka i leczenie nowotworów skóry — w tym trudno gojących się ran i trądziku odwróconego.</p>
-        <a href="#book" class="tlink">Umów konsultację <span class="arrow">→</span></a>
+        <a href="dermatologia.html" class="tlink">Zobacz specjalizację <span class="arrow">→</span></a>
       </article>
       <article class="spec__card reveal" data-d="1">
         <span class="spec__num">02</span>
         <h3>Ginekologia plastyczna i regeneracyjna</h3>
         <p>Leczenie objawów menopauzy (GSM), regeneracja i rewitalizacja tkanek intymnych oraz wsparcie w problemach uroginekologicznych — nietrzymaniu moczu i obniżeniu narządów miednicy.</p>
-        <a href="#book" class="tlink">Umów konsultację <span class="arrow">→</span></a>
+        <a href="ginekologia-plastyczna-regeneracyjna.html" class="tlink">Zobacz specjalizację <span class="arrow">→</span></a>
       </article>
       <article class="spec__card reveal" data-d="2">
         <span class="spec__num">03</span>
         <h3>Medycyna estetyczna</h3>
         <p>Zabiegi na twarz i ciało oparte na indywidualnym planie — naturalne efekty, które podkreślają Twoje piękno.</p>
-        <a href="#book" class="tlink">Umów konsultację <span class="arrow">→</span></a>
+        <a href="medycyna-estetyczna.html" class="tlink">Zobacz specjalizację <span class="arrow">→</span></a>
       </article>
       <article class="spec__card reveal">
         <span class="spec__num">04</span>
         <h3>Perinatologia</h3>
         <p>Spokojna opieka nad ciążą i precyzyjne badania USG 3D/4D — ze stałym, ludzkim kontaktem z lekarką.</p>
-        <a href="#book" class="tlink">Umów konsultację <span class="arrow">→</span></a>
+        <a href="perinatologia.html" class="tlink">Zobacz specjalizację <span class="arrow">→</span></a>
       </article>
       <article class="spec__card reveal" data-d="1">
         <span class="spec__num">05</span>
         <h3>Laseroterapia CO₂</h3>
         <p>Laser frakcyjny w terapii blizn, rozstępów i odmładzania skóry — skutecznie, komfortowo i bezpiecznie.</p>
-        <a href="#book" class="tlink">Umów konsultację <span class="arrow">→</span></a>
+        <a href="laseroterapia-co2.html" class="tlink">Zobacz specjalizację <span class="arrow">→</span></a>
       </article>
       <article class="spec__card reveal" data-d="2">
         <span class="spec__num">06</span>
         <h3>Diagnostyka USG 3D/4D</h3>
         <p>Obrazowanie najnowszej generacji — z jasnym, spokojnym omówieniem każdego wyniku, krok po kroku.</p>
-        <a href="#book" class="tlink">Umów konsultację <span class="arrow">→</span></a>
+        <a href="usg-3d-4d.html" class="tlink">Zobacz specjalizację <span class="arrow">→</span></a>
       </article>
     </div>
   </div>
@@ -213,7 +259,7 @@ w jednym, kameralnym miejscu i pod opieką doświadczonych specjalistek.</p>
         <p>Dermatologia oraz zabiegi medycyny estetycznej twarzy i ciała. Łączy precyzję z naturalnym efektem.</p>
       </article>
       <article class="member reveal" data-d="1">
-        <image-slot id="member-karolina" mask="inset(0 round 44% 44% 10px 10px / 32% 32% 8px 8px)" src="assets/photos/team/karolina.jpg" placeholder="Portret — Karolina Domińska"></image-slot>
+        <image-slot id="member-karolina" mask="inset(0 round 44% 44% 10px 10px / 32% 32% 8px 8px)" src="assets/photos/team/karolina.jpg" placeholder="Portret — Karolina Domińska" pan-x="10"></image-slot>
         <h4>Karolina Domińska</h4>
         <p class="role">Właścicielka · CEO</p>
         <p>Dba o to, by każda wizyta w Sante była doświadczeniem spokoju, troski i najwyższej jakości.</p>
@@ -286,6 +332,7 @@ w jednym, kameralnym miejscu i pod opieką doświadczonych specjalistek.</p>
 
 <!-- ================= EXPERIENCE / INTERIORS ================= -->
 <section class="section exp" id="exp">
+  <div class="confetti confetti--exp" aria-hidden="true"></div>
   <div class="sec-decor decor-exp"><img src="assets/decor/g3.svg" alt="" aria-hidden="true"></div>
   <div class="wrap">
     <div class="exp__head">
@@ -519,7 +566,7 @@ i regeneracyjne bez długiej rekonwalescencji.</p></div>
   <div class="wrap">
     <div class="footer__top">
       <div class="footer__brand">
-        <div class="footer__logo"><img src="assets/logos/logo-white.svg?v=2" alt="Santé Medica Petit"></div>
+        <div class="footer__logo"><img src="assets/logos/logo-white-large.svg?v=2" alt="Santé Medica Petit"></div>
         <p>Butikowa klinika kobieca w Gdańsku — dermatologia, ginekologia i medycyna estetyczna w atmosferze spokoju, dyskrecji i troski.</p>
         <span class="script">Petit</span>
       </div>
