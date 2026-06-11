@@ -109,4 +109,36 @@
       if (!isOpen) item.classList.add('open');
     });
   });
+
+  /* ---- Confetti / terrazzo motif (booking section) ---- */
+  (function () {
+    var layer = document.querySelector('.book .confetti');
+    if (!layer) return;
+    // weighted shape mix + brand-matched voucher palette
+    var shapes = ['tri', 'tri', 'dot', 'dot', 'quad', 'shard', 'semi', 'sliver', 'rect'];
+    var colors = ['#3C2926', '#3C2926', '#A8645F', '#C18B86', '#7E3437', '#CB7E5E', '#C99A95', '#A8645F'];
+    var N = 58;
+    var frag = document.createDocumentFragment();
+    function r(min, max) { return min + Math.random() * (max - min); }
+    for (var i = 0; i < N; i++) {
+      var el = document.createElement('i');
+      el.className = shapes[(Math.random() * shapes.length) | 0];
+      var size = r(6, 26);
+      var fy = r(7, 16) * (Math.random() < 0.5 ? -1 : 1);
+      el.style.cssText =
+        '--x:' + r(0, 100).toFixed(2) + '%;' +
+        '--y:' + r(0, 100).toFixed(2) + '%;' +
+        '--s:' + size.toFixed(1) + 'px;' +
+        '--r:' + ((Math.random() * 360) | 0) + 'deg;' +
+        '--rd:' + ((r(-9, 9)) | 0) + 'deg;' +
+        '--fy:' + fy.toFixed(1) + 'px;' +
+        '--d:' + r(7, 15).toFixed(1) + 's;' +
+        '--df:' + r(0, 6).toFixed(1) + 's;' +
+        '--ds:' + r(0, 0.9).toFixed(2) + 's;' +
+        '--o:' + r(0.55, 0.95).toFixed(2) + ';' +
+        '--c:' + colors[(Math.random() * colors.length) | 0] + ';';
+      frag.appendChild(el);
+    }
+    layer.appendChild(frag);
+  })();
 })();
