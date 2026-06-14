@@ -110,6 +110,62 @@
     });
   });
 
+  /* ---- Interiors gallery lightbox ---- */
+  var galleryItems = [].slice.call(document.querySelectorAll('.exp__photo'));
+  var lightbox = document.getElementById('galleryLightbox');
+  if (galleryItems.length && lightbox) {
+    var lightboxImage = lightbox.querySelector('.gallery-lightbox__image');
+    var lightboxCaption = lightbox.querySelector('.gallery-lightbox__caption');
+    var closeButtons = [].slice.call(lightbox.querySelectorAll('[data-gallery-close]'));
+    var prevButton = lightbox.querySelector('[data-gallery-prev]');
+    var nextButton = lightbox.querySelector('[data-gallery-next]');
+    var activeGalleryIndex = 0;
+
+    function showGalleryImage(index) {
+      activeGalleryIndex = (index + galleryItems.length) % galleryItems.length;
+      var item = galleryItems[activeGalleryIndex];
+      var src = item.getAttribute('data-gallery-src');
+      var caption = item.getAttribute('data-gallery-caption') || '';
+      lightboxImage.src = src;
+      lightboxImage.alt = caption;
+      lightboxCaption.textContent = caption;
+    }
+
+    function openGallery(index) {
+      showGalleryImage(index);
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (nextButton) nextButton.focus();
+    }
+
+    function closeGallery() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = menu && menu.classList.contains('open') ? 'hidden' : '';
+      if (galleryItems[activeGalleryIndex]) galleryItems[activeGalleryIndex].focus();
+    }
+
+    galleryItems.forEach(function (item, index) {
+      item.addEventListener('click', function () { openGallery(index); });
+    });
+    closeButtons.forEach(function (button) {
+      button.addEventListener('click', closeGallery);
+    });
+    if (prevButton) {
+      prevButton.addEventListener('click', function () { showGalleryImage(activeGalleryIndex - 1); });
+    }
+    if (nextButton) {
+      nextButton.addEventListener('click', function () { showGalleryImage(activeGalleryIndex + 1); });
+    }
+    document.addEventListener('keydown', function (event) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (event.key === 'Escape') closeGallery();
+      if (event.key === 'ArrowLeft') showGalleryImage(activeGalleryIndex - 1);
+      if (event.key === 'ArrowRight') showGalleryImage(activeGalleryIndex + 1);
+    });
+  }
+
   /* ---- Confetti / terrazzo motif ---- */
   (function () {
     var configs = [
