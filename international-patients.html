@@ -153,7 +153,9 @@
         <p class="seo-copy">Tell us what you are looking for, and we will guide you through the next steps.</p>
         <div class="seo-related international-contact__links"><a href="tel:+48880800100">+48 880 800 100<span class="arrow">→</span></a><a href="mailto:recepcja@santemedica.pl">recepcja@santemedica.pl<span class="arrow">→</span></a><a href="index.html#contact">Map and location<span class="arrow">→</span></a></div>
       </div>
-      <form class="form international-form reveal" data-d="1" action="mailto:recepcja@santemedica.pl" method="post" enctype="text/plain">
+      <form class="form international-form reveal" name="international-patients" method="POST" action="dziekujemy.html" data-netlify="true" netlify-honeypot="bot-field" data-d="1">
+        <input type="hidden" name="form-name" value="international-patients">
+        <p class="form__hidden"><label>Do not fill this field <input name="bot-field" autocomplete="off"></label></p>
         <div class="row">
           <div class="field"><label for="intl-name">Name</label><input id="intl-name" name="Name" type="text" autocomplete="name" required=""></div>
           <div class="field"><label for="intl-country">Country</label><input id="intl-country" name="Country" type="text" autocomplete="country-name"></div>
@@ -167,9 +169,10 @@
           <div class="field"><label for="intl-dates">Preferred dates</label><input id="intl-dates" name="Preferred dates" type="text"></div>
           <div class="field"><label for="intl-history">Previous procedures / diagnosis</label><input id="intl-history" name="Previous procedures / diagnosis" type="text"></div>
         </div>
-        <div class="field"><label for="intl-message">Message</label><textarea id="intl-message" name="Message" rows="4"></textarea></div>
+        <div class="field"><label for="intl-message">Message</label><textarea id="intl-message" name="Message" rows="4" placeholder="Please do not send full medical records through this form."></textarea></div>
+        <label class="form__consent"><input type="checkbox" name="Contact consent" value="yes" required=""> <span>I agree to be contacted about my enquiry and I&nbsp;have read the <a href="polityka-prywatnosci.html">privacy policy</a>.</span></label>
         <button class="btn btn-solid" type="submit">Send enquiry <span class="arrow">→</span></button>
-        <p class="form__note">This form opens your email application so you can send the enquiry directly to the clinic.</p></form>
+        <p class="form__note">Your enquiry will be sent securely through the website form handler. Please do not include full medical documentation or highly sensitive details.</p></form>
       
     </div>
   </section>

@@ -87,17 +87,6 @@
     show(0); start();
   }
 
-  /* ---- Booking form (demo) ---- */
-  var form = document.querySelector('.form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var btn = form.querySelector('.btn');
-      btn.textContent = 'Dziękujemy — wkrótce się odezwiemy';
-      btn.style.pointerEvents = 'none';
-    });
-  }
-
   /* ---- FAQ accordion ---- */
   var faqItems = [].slice.call(document.querySelectorAll('.faq__item'));
   faqItems.forEach(function (item) {

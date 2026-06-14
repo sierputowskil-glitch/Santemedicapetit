@@ -458,6 +458,12 @@ image-slot{--slot-bg:var(--champagne);background:var(--champagne);overflow:hidde
 .field textarea{resize:none;}
 .form .btn{width:100%;justify-content:center;margin-top:8px;}
 .form__note{font-size:12px;color:var(--taupe-deep);text-align:center;margin-top:18px;line-height:1.5;}
+.form__hidden{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;}
+.form__consent{display:flex;align-items:flex-start;gap:12px;margin:-4px 0 18px;color:var(--body);
+  font-size:13px;line-height:1.55;}
+.form__consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--olive);flex:0 0 auto;}
+.form__consent a{color:var(--graphite);font-weight:600;text-decoration:underline;text-underline-offset:3px;}
+.form__consent a:hover{color:var(--olive);}
 
 /* ============================================================
    CONTACT

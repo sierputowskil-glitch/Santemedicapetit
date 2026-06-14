@@ -87,14 +87,4 @@
     });
   });
 
-  /* ---- Demo forms (booking / apply) ---- */
-  [].slice.call(document.querySelectorAll('.form')).forEach(function (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var btn = form.querySelector('.btn');
-      if (!btn) return;
-      btn.textContent = 'Dziękujemy — wkrótce się odezwiemy';
-      btn.style.pointerEvents = 'none';
-    });
-  });
 })();

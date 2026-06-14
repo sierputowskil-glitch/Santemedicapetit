@@ -320,14 +320,16 @@
         <div><span class="ic"></span> Pon – Pt &nbsp;9:00 – 19:00 &nbsp;·&nbsp; Sob &nbsp;9:00 – 14:00</div>
       </div>
     </div>
-    <form class="form reveal" data-d="1">
+    <form class="form reveal" name="badania-kliniczne" method="POST" action="dziekujemy.html" data-netlify="true" netlify-honeypot="bot-field" data-d="1">
+      <input type="hidden" name="form-name" value="badania-kliniczne">
+      <p class="form__hidden"><label>Nie wypełniaj tego pola <input name="bot-field" autocomplete="off"></label></p>
       <div class="row">
-        <div class="field"><label>Imię i&nbsp;nazwisko</label><input type="text" placeholder="Anna Kowalska" required=""></div>
-        <div class="field"><label>Telefon</label><input type="tel" placeholder="+48 ___ ___ ___" required=""></div>
+        <div class="field"><label for="trial-name">Imię i&nbsp;nazwisko</label><input id="trial-name" name="imie-i-nazwisko" type="text" autocomplete="name" placeholder="Anna Kowalska" required=""></div>
+        <div class="field"><label for="trial-phone">Telefon</label><input id="trial-phone" name="telefon" type="tel" autocomplete="tel" placeholder="+48 ___ ___ ___" required=""></div>
       </div>
-      <div class="field"><label>E-mail</label><input type="email" placeholder="anna@email.pl"></div>
-      <div class="field"><label>Obszar zainteresowania</label>
-        <select>
+      <div class="field"><label for="trial-email">E-mail</label><input id="trial-email" name="email" type="email" autocomplete="email" placeholder="anna@email.pl"></div>
+      <div class="field"><label for="trial-area">Obszar zainteresowania</label>
+        <select id="trial-area" name="obszar-zainteresowania">
           <option>Ginekologia regeneracyjna / GSM (menopauza)</option>
           <option>Terapie niehormonalne</option>
           <option>Dermatologia</option>
@@ -335,9 +337,10 @@
           <option>Nie wiem — proszę o&nbsp;kontakt</option>
         </select>
       </div>
-      <div class="field"><label>Wiadomość (opcjonalnie)</label><textarea rows="2" placeholder="Krótko o sobie lub pytania…"></textarea></div>
+      <div class="field"><label for="trial-message">Wiadomość (opcjonalnie)</label><textarea id="trial-message" name="wiadomosc" rows="2" placeholder="Krótka informacja lub pytanie bez pełnej dokumentacji medycznej…"></textarea></div>
+      <label class="form__consent"><input type="checkbox" name="zgoda-na-kontakt" value="tak" required=""> <span>Wyrażam zgodę na kontakt w&nbsp;sprawie mojego zgłoszenia. Zapoznałam/em się z&nbsp;<a href="polityka-prywatnosci.html">polityką prywatności</a>.</span></label>
       <button type="submit" class="btn btn-solid">Wyślij zgłoszenie <span class="arrow">→</span></button>
-      <p class="form__note">Skontaktujemy się z&nbsp;Tobą w&nbsp;ciągu jednego dnia roboczego.<br>Twoje dane są w&nbsp;pełni poufne i&nbsp;wykorzystywane wyłącznie w&nbsp;celu kontaktu.</p></form>
+      <p class="form__note">Skontaktujemy się z&nbsp;Tobą w&nbsp;ciągu jednego dnia roboczego. Nie przesyłaj przez formularz pełnej dokumentacji medycznej ani danych szczególnie wrażliwych.</p></form>
     
   </div>
 </section>
